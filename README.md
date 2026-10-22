@@ -30,6 +30,7 @@ Official Smithy team projects with the 🚧 icon next to them are still a work-i
   - [Videos](#videos)
   - [Blog Posts](#blog-posts)
   - [Others](#others)
+  - [Experimental](#experimental)
   - [Contribute](#contribute)
 
 ## Build tools
@@ -118,6 +119,11 @@ Official Smithy team projects with the 🚧 icon next to them are still a work-i
 * [smaws](https://github.com/chris-armstrong/smaws/) - a Smithy generator and AWS SDK built in OCaml
 * [Smithy Selector Playground](http://github.com/kubukoz/smithy-selector-playground/) - a web tool for experimenting with Smithy selectors
 * [Smithy Transcoder](https://github.com/kubukoz/smithy-transcoder) - a web tool for previewing the serialized form of Smithy models
+
+## Experimental
+Projects in the [experimental](experimental) directory are early prototypes maintained in this repository. They can change or be removed at any time and are not production-ready.
+
+* [Smithy API Explorer](experimental/smithy-api-explorer) <img src="/assets/smithy-anvil.svg" alt="(official)" title="Smithy Official" height="10px"> 🚧 - An experimental Smithy build plugin that renders a service model as a self-contained, interactive HTML API reference.
 
 ## Contribute
 Contributions welcome! Read the [contribution guidelines](CONTRIBUTING.md) first.

@@ -1,0 +1,897 @@
+{
+    "operations": [
+        {
+            "id": "example.notes#DeleteNote",
+            "name": "DeleteNote",
+            "readonly": false,
+            "idempotent": true,
+            "deprecated": false,
+            "input": "example.notes#DeleteNoteInput",
+            "output": null,
+            "errors": [
+                "example.notes#NoteNotFound"
+            ],
+            "serviceErrors": [],
+            "documentation": "Deletes a note.",
+            "http": {
+                "method": "DELETE",
+                "uri": "/notes/{id}",
+                "code": 204
+            },
+            "auth": [
+                "smithy.api#noAuth"
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#http",
+                    "text": "@http(method: \"DELETE\", uri: \"/notes/{id}\", code: 204)"
+                },
+                {
+                    "id": "smithy.api#idempotent",
+                    "text": "@idempotent"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 45
+            }
+        },
+        {
+            "id": "example.notes#GetNote",
+            "name": "GetNote",
+            "readonly": true,
+            "idempotent": false,
+            "deprecated": false,
+            "input": "example.notes#GetNoteInput",
+            "output": "example.notes#GetNoteOutput",
+            "errors": [
+                "example.notes#NoteNotFound"
+            ],
+            "serviceErrors": [],
+            "documentation": "Returns a note.",
+            "http": {
+                "method": "GET",
+                "uri": "/notes/{id}",
+                "code": 200,
+                "responseContentType": "application/json"
+            },
+            "auth": [
+                "smithy.api#noAuth"
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#http",
+                    "text": "@http(method: \"GET\", uri: \"/notes/{id}\")"
+                },
+                {
+                    "id": "smithy.api#readonly",
+                    "text": "@readonly"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 14
+            }
+        },
+        {
+            "id": "example.notes#PutNote",
+            "name": "PutNote",
+            "readonly": false,
+            "idempotent": true,
+            "deprecated": false,
+            "input": "example.notes#PutNoteInput",
+            "output": null,
+            "errors": [],
+            "serviceErrors": [],
+            "documentation": "Creates or replaces a note.",
+            "http": {
+                "method": "PUT",
+                "uri": "/notes/{id}",
+                "code": 200,
+                "requestContentType": "text/plain"
+            },
+            "auth": [
+                "smithy.api#noAuth"
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#http",
+                    "text": "@http(method: \"PUT\", uri: \"/notes/{id}\")"
+                },
+                {
+                    "id": "smithy.api#idempotent",
+                    "text": "@idempotent"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 30
+            }
+        }
+    ],
+    "shapes": {
+        "example.notes#DeleteNoteInput": {
+            "id": "example.notes#DeleteNoteInput",
+            "name": "DeleteNoteInput",
+            "type": "structure",
+            "deprecated": false,
+            "sensitive": false,
+            "input": true,
+            "members": [
+                {
+                    "id": "example.notes#DeleteNoteInput$id",
+                    "name": "id",
+                    "target": "example.notes#NoteId",
+                    "targetType": "string",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": true,
+                    "binding": {
+                        "location": "label",
+                        "name": "id"
+                    },
+                    "traits": [
+                        {
+                            "id": "smithy.api#httpLabel",
+                            "text": "@httpLabel"
+                        },
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 49
+                    }
+                }
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#input",
+                    "text": "@input"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 46
+            }
+        },
+        "example.notes#GetNoteInput": {
+            "id": "example.notes#GetNoteInput",
+            "name": "GetNoteInput",
+            "type": "structure",
+            "deprecated": false,
+            "sensitive": false,
+            "input": true,
+            "members": [
+                {
+                    "id": "example.notes#GetNoteInput$id",
+                    "name": "id",
+                    "target": "example.notes#NoteId",
+                    "targetType": "string",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": true,
+                    "binding": {
+                        "location": "label",
+                        "name": "id"
+                    },
+                    "traits": [
+                        {
+                            "id": "smithy.api#httpLabel",
+                            "text": "@httpLabel"
+                        },
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 18
+                    }
+                }
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#input",
+                    "text": "@input"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 15
+            }
+        },
+        "example.notes#GetNoteOutput": {
+            "id": "example.notes#GetNoteOutput",
+            "name": "GetNoteOutput",
+            "type": "structure",
+            "deprecated": false,
+            "sensitive": false,
+            "output": true,
+            "members": [
+                {
+                    "id": "example.notes#GetNoteOutput$note",
+                    "name": "note",
+                    "target": "example.notes#Note",
+                    "targetType": "structure",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": false,
+                    "traits": [
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 22
+                    }
+                }
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#output",
+                    "text": "@output"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 20
+            }
+        },
+        "example.notes#Note": {
+            "id": "example.notes#Note",
+            "name": "Note",
+            "type": "structure",
+            "deprecated": false,
+            "sensitive": false,
+            "members": [
+                {
+                    "id": "example.notes#Note$id",
+                    "name": "id",
+                    "target": "example.notes#NoteId",
+                    "targetType": "string",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": false,
+                    "traits": [
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 63
+                    }
+                },
+                {
+                    "id": "example.notes#Note$text",
+                    "name": "text",
+                    "target": "example.notes#NoteText",
+                    "targetType": "string",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": false,
+                    "traits": [
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 66
+                    }
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 61
+            }
+        },
+        "example.notes#NoteId": {
+            "id": "example.notes#NoteId",
+            "name": "NoteId",
+            "type": "string",
+            "deprecated": false,
+            "sensitive": false,
+            "constraints": {
+                "length": {
+                    "min": 1,
+                    "max": 64
+                },
+                "pattern": "^[a-z0-9-]+$"
+            },
+            "traits": [
+                {
+                    "id": "smithy.api#length",
+                    "text": "@length(min: 1, max: 64)"
+                },
+                {
+                    "id": "smithy.api#pattern",
+                    "text": "@pattern(\"^[a-z0-9-]+$\")"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 56
+            }
+        },
+        "example.notes#NoteNotFound": {
+            "id": "example.notes#NoteNotFound",
+            "name": "NoteNotFound",
+            "type": "structure",
+            "deprecated": false,
+            "sensitive": false,
+            "documentation": "No note has the given ID.",
+            "error": "client",
+            "code": 404,
+            "httpError": 404,
+            "members": [
+                {
+                    "id": "example.notes#NoteNotFound$message",
+                    "name": "message",
+                    "target": "smithy.api#String",
+                    "targetType": "string",
+                    "required": false,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": true,
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 73
+                    }
+                }
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#error",
+                    "text": "@error(\"client\")"
+                },
+                {
+                    "id": "smithy.api#httpError",
+                    "text": "@httpError(404)"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 72
+            }
+        },
+        "example.notes#NoteText": {
+            "id": "example.notes#NoteText",
+            "name": "NoteText",
+            "type": "string",
+            "deprecated": false,
+            "sensitive": false,
+            "constraints": {
+                "length": {
+                    "max": 1000
+                }
+            },
+            "traits": [
+                {
+                    "id": "smithy.api#length",
+                    "text": "@length(max: 1000)"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 59
+            }
+        },
+        "example.notes#PutNoteInput": {
+            "id": "example.notes#PutNoteInput",
+            "name": "PutNoteInput",
+            "type": "structure",
+            "deprecated": false,
+            "sensitive": false,
+            "input": true,
+            "members": [
+                {
+                    "id": "example.notes#PutNoteInput$id",
+                    "name": "id",
+                    "target": "example.notes#NoteId",
+                    "targetType": "string",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": true,
+                    "binding": {
+                        "location": "label",
+                        "name": "id"
+                    },
+                    "traits": [
+                        {
+                            "id": "smithy.api#httpLabel",
+                            "text": "@httpLabel"
+                        },
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 34
+                    }
+                },
+                {
+                    "id": "example.notes#PutNoteInput$text",
+                    "name": "text",
+                    "target": "example.notes#NoteText",
+                    "targetType": "string",
+                    "required": true,
+                    "deprecated": false,
+                    "sensitive": false,
+                    "idempotencyToken": false,
+                    "clientOptional": false,
+                    "nullable": true,
+                    "binding": {
+                        "location": "payload"
+                    },
+                    "traits": [
+                        {
+                            "id": "smithy.api#httpPayload",
+                            "text": "@httpPayload"
+                        },
+                        {
+                            "id": "smithy.api#required",
+                            "text": "@required"
+                        }
+                    ],
+                    "source": {
+                        "file": "<golden>/model/notes.smithy",
+                        "line": 38
+                    }
+                }
+            ],
+            "traits": [
+                {
+                    "id": "smithy.api#input",
+                    "text": "@input"
+                }
+            ],
+            "source": {
+                "file": "<golden>/model/notes.smithy",
+                "line": 31
+            }
+        }
+    },
+    "validation": {
+        "valid": true,
+        "eventCount": 0,
+        "counts": {},
+        "events": [],
+        "notes": []
+    },
+    "service": {
+        "id": "example.notes#Notes",
+        "name": "Notes",
+        "version": "2024-01-01",
+        "documentation": "Stores short text notes.",
+        "protocol": "",
+        "errors": [],
+        "authSchemes": {},
+        "source": {
+            "file": "<golden>/model/notes.smithy",
+            "line": 6
+        }
+    },
+    "resources": [],
+    "changes": {
+        "entries": {
+            "example.notes#DeleteNote": "added",
+            "example.notes#DeleteNoteInput": "added",
+            "example.notes#DeleteNoteInput$id": "added",
+            "example.notes#Note": "changed",
+            "example.notes#NoteNotFound": "changed",
+            "example.notes#NoteText": "changed",
+            "example.notes#Notes": "changed"
+        },
+        "removed": [
+            {
+                "id": "example.notes#Note$title",
+                "name": "title",
+                "type": "member",
+                "parent": "example.notes#Note"
+            }
+        ],
+        "compatibility": [
+            {
+                "severity": "ERROR",
+                "id": "ChangedLengthTrait",
+                "message": "smithy.api#length trait value `max` was made more restrictive by lowering from 2000 to 1000",
+                "shapeId": "example.notes#NoteText",
+                "breaking": true,
+                "danger": false
+            },
+            {
+                "severity": "ERROR",
+                "id": "RemovedShape",
+                "message": "Removed member `example.notes#Note$title`",
+                "shapeId": "example.notes#Note$title",
+                "breaking": true,
+                "danger": false
+            },
+            {
+                "severity": "NOTE",
+                "id": "AddedOperationBinding.ToService.DeleteNote",
+                "message": "Operation binding of `example.notes#DeleteNote` was added to the service shape, `example.notes#Notes`",
+                "shapeId": "example.notes#Notes",
+                "breaking": false,
+                "danger": false
+            },
+            {
+                "severity": "NOTE",
+                "id": "AddedShape",
+                "message": "Added operation `example.notes#DeleteNote`",
+                "shapeId": "example.notes#DeleteNote",
+                "breaking": false,
+                "danger": false
+            },
+            {
+                "severity": "NOTE",
+                "id": "AddedShape",
+                "message": "Added structure `example.notes#DeleteNoteInput`",
+                "shapeId": "example.notes#DeleteNoteInput",
+                "breaking": false,
+                "danger": false
+            },
+            {
+                "severity": "NOTE",
+                "id": "ModifiedTrait.Update.smithy.api#length",
+                "message": "Changed trait `smithy.api#length` from \n```\n{\n    \"max\": 2000\n}\n```\n to \n```\n{\n    \"max\": 1000\n}\n```\n",
+                "shapeId": "example.notes#NoteText",
+                "breaking": false,
+                "danger": false
+            },
+            {
+                "severity": "NOTE",
+                "id": "ModifiedTrait.Update.smithy.api#documentation",
+                "message": "Changed trait `smithy.api#documentation` from `The note does not exist.` to `No note has the given ID.`",
+                "shapeId": "example.notes#NoteNotFound",
+                "breaking": false,
+                "danger": false
+            }
+        ],
+        "traits": {
+            "example.notes#NoteText": {
+                "added": [],
+                "removed": [],
+                "changed": [
+                    {
+                        "id": "smithy.api#length",
+                        "before": "@length(max: 2000)"
+                    }
+                ]
+            }
+        },
+        "targetChanged": {},
+        "resources": {},
+        "docsChanged": [
+            "example.notes#NoteNotFound"
+        ],
+        "files": [
+            {
+                "path": "notes.smithy",
+                "status": "modified",
+                "added": 15,
+                "removed": 5,
+                "hunks": [
+                    {
+                        "oldStart": 5,
+                        "oldCount": 7,
+                        "newStart": 5,
+                        "newCount": 7,
+                        "lines": [
+                            {
+                                "kind": " ",
+                                "text": "/// Stores short text notes.",
+                                "old": 5,
+                                "new": 5
+                            },
+                            {
+                                "kind": " ",
+                                "text": "service Notes {",
+                                "old": 6,
+                                "new": 6,
+                                "element": "example.notes#Notes"
+                            },
+                            {
+                                "kind": " ",
+                                "text": "    version: \"2024-01-01\"",
+                                "old": 7,
+                                "new": 7
+                            },
+                            {
+                                "kind": "-",
+                                "text": "    operations: [GetNote, PutNote]",
+                                "old": 8
+                            },
+                            {
+                                "kind": "+",
+                                "text": "    operations: [GetNote, PutNote, DeleteNote]",
+                                "new": 8
+                            },
+                            {
+                                "kind": " ",
+                                "text": "}",
+                                "old": 9,
+                                "new": 9
+                            },
+                            {
+                                "kind": " ",
+                                "text": "",
+                                "old": 10,
+                                "new": 10
+                            },
+                            {
+                                "kind": " ",
+                                "text": "/// Returns a note.",
+                                "old": 11,
+                                "new": 11
+                            }
+                        ]
+                    },
+                    {
+                        "oldStart": 39,
+                        "oldCount": 11,
+                        "newStart": 39,
+                        "newCount": 23,
+                        "lines": [
+                            {
+                                "kind": " ",
+                                "text": "    }",
+                                "old": 39,
+                                "new": 39
+                            },
+                            {
+                                "kind": " ",
+                                "text": "}",
+                                "old": 40,
+                                "new": 40
+                            },
+                            {
+                                "kind": " ",
+                                "text": "",
+                                "old": 41,
+                                "new": 41
+                            },
+                            {
+                                "kind": "+",
+                                "text": "/// Deletes a note.",
+                                "new": 42
+                            },
+                            {
+                                "kind": "+",
+                                "text": "@idempotent",
+                                "new": 43
+                            },
+                            {
+                                "kind": "+",
+                                "text": "@http(method: \"DELETE\", uri: \"/notes/{id}\", code: 204)",
+                                "new": 44
+                            },
+                            {
+                                "kind": "+",
+                                "text": "operation DeleteNote {",
+                                "new": 45,
+                                "element": "example.notes#DeleteNote"
+                            },
+                            {
+                                "kind": "+",
+                                "text": "    input := {",
+                                "new": 46,
+                                "element": "example.notes#DeleteNoteInput"
+                            },
+                            {
+                                "kind": "+",
+                                "text": "        @required",
+                                "new": 47
+                            },
+                            {
+                                "kind": "+",
+                                "text": "        @httpLabel",
+                                "new": 48
+                            },
+                            {
+                                "kind": "+",
+                                "text": "        id: NoteId",
+                                "new": 49,
+                                "element": "example.notes#DeleteNoteInput$id"
+                            },
+                            {
+                                "kind": "+",
+                                "text": "    }",
+                                "new": 50
+                            },
+                            {
+                                "kind": "+",
+                                "text": "    errors: [NoteNotFound]",
+                                "new": 51
+                            },
+                            {
+                                "kind": "+",
+                                "text": "}",
+                                "new": 52
+                            },
+                            {
+                                "kind": "+",
+                                "text": "",
+                                "new": 53
+                            },
+                            {
+                                "kind": " ",
+                                "text": "@pattern(\"^[a-z0-9-]+$\")",
+                                "old": 42,
+                                "new": 54
+                            },
+                            {
+                                "kind": " ",
+                                "text": "@length(min: 1, max: 64)",
+                                "old": 43,
+                                "new": 55
+                            },
+                            {
+                                "kind": " ",
+                                "text": "string NoteId",
+                                "old": 44,
+                                "new": 56,
+                                "element": "example.notes#NoteId"
+                            },
+                            {
+                                "kind": " ",
+                                "text": "",
+                                "old": 45,
+                                "new": 57
+                            },
+                            {
+                                "kind": "-",
+                                "text": "@length(max: 2000)",
+                                "old": 46
+                            },
+                            {
+                                "kind": "+",
+                                "text": "@length(max: 1000)",
+                                "new": 58
+                            },
+                            {
+                                "kind": " ",
+                                "text": "string NoteText",
+                                "old": 47,
+                                "new": 59,
+                                "element": "example.notes#NoteText"
+                            },
+                            {
+                                "kind": " ",
+                                "text": "",
+                                "old": 48,
+                                "new": 60
+                            },
+                            {
+                                "kind": " ",
+                                "text": "structure Note {",
+                                "old": 49,
+                                "new": 61,
+                                "element": "example.notes#Note"
+                            }
+                        ]
+                    },
+                    {
+                        "oldStart": 52,
+                        "oldCount": 11,
+                        "newStart": 64,
+                        "newCount": 9,
+                        "lines": [
+                            {
+                                "kind": " ",
+                                "text": "",
+                                "old": 52,
+                                "new": 64
+                            },
+                            {
+                                "kind": " ",
+                                "text": "    @required",
+                                "old": 53,
+                                "new": 65
+                            },
+                            {
+                                "kind": " ",
+                                "text": "    text: NoteText",
+                                "old": 54,
+                                "new": 66,
+                                "element": "example.notes#Note$text"
+                            },
+                            {
+                                "kind": "-",
+                                "text": "",
+                                "old": 55
+                            },
+                            {
+                                "kind": "-",
+                                "text": "    title: String",
+                                "old": 56
+                            },
+                            {
+                                "kind": " ",
+                                "text": "}",
+                                "old": 57,
+                                "new": 67
+                            },
+                            {
+                                "kind": " ",
+                                "text": "",
+                                "old": 58,
+                                "new": 68
+                            },
+                            {
+                                "kind": "-",
+                                "text": "/// The note does not exist.",
+                                "old": 59
+                            },
+                            {
+                                "kind": "+",
+                                "text": "/// No note has the given ID.",
+                                "new": 69
+                            },
+                            {
+                                "kind": " ",
+                                "text": "@error(\"client\")",
+                                "old": 60,
+                                "new": 70
+                            },
+                            {
+                                "kind": " ",
+                                "text": "@httpError(404)",
+                                "old": 61,
+                                "new": 71
+                            },
+                            {
+                                "kind": " ",
+                                "text": "structure NoteNotFound {",
+                                "old": 62,
+                                "new": 72,
+                                "element": "example.notes#NoteNotFound"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "diffMode": "source",
+        "baseline": {
+            "kind": "path",
+            "path": "<golden>/baseline"
+        }
+    },
+    "generator": {
+        "name": "smithy-api-explorer",
+        "experimental": true
+    },
+    "title": "Notes API"
+}
